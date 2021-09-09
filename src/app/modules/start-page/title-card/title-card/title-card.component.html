@@ -1,0 +1,26 @@
+<form [formGroup]="postForm" class="form">
+  <p class="text">{{text}}</p>
+  <div class="row">
+    <div class="col">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Название:</mat-label>
+        <input matInput formControlName="title" [value]="article.title">
+      </mat-form-field>
+
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <mat-form-field appearance="fill">
+        <mat-label>Содержание</mat-label>
+        <input matInput [value]="article.text" formControlName="text">
+      </mat-form-field>
+
+    </div>
+  </div>
+
+  <button mat-button color="primary" (click)="closeDialog(false)">Закрыть</button>
+  <button mat-button color="primary" (click)="closeDialog(true)">Сохранить</button>
+
+</form>

@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col">
+    <button mat-raised-button color="primary" (click)="onOpenButtonClick()">Добавить</button>
+  </div>
+</div>
+<div class="col">
+  <div class="row">
+    <div class="pb20"  *ngFor="let info of infos">
+    <mat-card>
+          <mat-card-title>
+            <p class="text">{{ info.title }}</p>
+
+          </mat-card-title>
+          <mat-card-content>
+            <p class="text">{{ info.text }}</p>
+          </mat-card-content>
+          <mat-divider inset></mat-divider>
+          <mat-card-actions>
+            <button mat-raised-button (click)="onOpenButtonClick(info.id)">Открыть</button>
+            <button mat-raised-button (click)="onDeleteButtonClick(info.id)">Удалить</button>
+          </mat-card-actions>
+      <p></p>
+    </mat-card>
+    </div>
+  </div>
+</div>

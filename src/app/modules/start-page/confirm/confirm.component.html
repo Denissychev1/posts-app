@@ -1,0 +1,5 @@
+<p>{{ message }}</p>
+<button mat-button (click)="closeDialog(true)">Да</button>
+<button mat-button (click)="closeDialog(false)">Нет</button>
+<button *ngIf="allowCancel" mat-button (click)="closeDialog(false)">Отмена</button>
+

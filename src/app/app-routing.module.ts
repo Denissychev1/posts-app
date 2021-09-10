@@ -11,10 +11,7 @@ const routes: Routes = [
     path: 'start',
     loadChildren: () => import('./modules/start-page/start-page.module').then(m => m.StartPageModule)
   },
-  {
-    path: '**',
-    redirectTo: 'start'
-  }]
+  ]
 
 
 @NgModule({

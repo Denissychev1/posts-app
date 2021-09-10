@@ -8,10 +8,10 @@ const routes: Routes = [
     path: '',
     component: StartPageComponent,
     data: {title: 'start'}
-  }, {
-  path: 'title',
-    component: TitleCardComponent,
-    data: {title: 'title-card'}
+  },
+  {
+    path: 'title',
+    component: TitleCardComponent
   }
 ];
 

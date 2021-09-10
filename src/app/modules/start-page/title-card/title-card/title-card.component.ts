@@ -1,11 +1,13 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {PostService} from "../../../../services/post.service";
 
 @Component({
   selector: 'app-title-card',
   templateUrl: './title-card.component.html',
-  styleUrls: ['./title-card.component.css']
+  styleUrls: ['./title-card.component.css'],
+  providers: [PostService]
 })
 export class TitleCardComponent implements OnInit {
   article = {
@@ -18,9 +20,9 @@ export class TitleCardComponent implements OnInit {
 
   // @ts-ignore
   postForm: FormGroup;
-  @Input() id: string | undefined
+  @Input() id: number | undefined
 
-  constructor(public dialogRef: MatDialogRef<TitleCardComponent>, private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any,) {
+  constructor(public dialogRef: MatDialogRef<TitleCardComponent>, private fb: FormBuilder, @Inject(MAT_DIALOG_DATA) public data: any) {
 
     // Так как компонент для редактирования и создания нового поста один и тот же, то проверяем на наличие data
     // Если дата есть, то это карточка просмотра поста
@@ -37,6 +39,13 @@ export class TitleCardComponent implements OnInit {
     this.initForm();
   }
 
+  onTextValueChanged(e: any) {
+    this.article.text = e;
+  }
+
+  onTitleValueChanged(e: any) {
+    this.article.title = e;
+  }
 
   // Создаем форму поста
   initForm() {
@@ -45,7 +54,6 @@ export class TitleCardComponent implements OnInit {
       text: [`${this.article.text}`],
     });
   }
-
 
   //Закрываем диалог
   closeDialog(save: boolean) {

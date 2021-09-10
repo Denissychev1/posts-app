@@ -5,7 +5,7 @@
 
       <mat-form-field appearance="fill">
         <mat-label>Название:</mat-label>
-        <input matInput formControlName="title" [value]="article.title">
+        <input matInput formControlName="title" [value]="article.title" (ngModelChange)="onTitleValueChanged($event)">
       </mat-form-field>
 
     </div>
@@ -14,7 +14,7 @@
     <div class="col">
       <mat-form-field appearance="fill">
         <mat-label>Содержание</mat-label>
-        <textarea matInput [value]="article.text" formControlName="text"></textarea>
+        <textarea matInput [value]="article.text" (ngModelChange)="onTextValueChanged($event)" formControlName="text"></textarea>
       </mat-form-field>
 
     </div>

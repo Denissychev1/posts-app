@@ -11,7 +11,6 @@ import {ConfirmService} from "../../../services/confirm.service";
   providers: [PostService, ConfirmService]
 })
 export class StartPageComponent implements OnInit {
-
   infos: any;
 
   constructor(public dialog: MatDialog,
@@ -80,4 +79,5 @@ export class StartPageComponent implements OnInit {
       }
     });
   }
+
 }

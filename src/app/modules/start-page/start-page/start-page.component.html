@@ -3,16 +3,15 @@
     <button mat-raised-button color="primary" (click)="onOpenButtonClick()">Добавить</button>
   </div>
 </div>
-<div class="col">
-  <div class="row">
-    <div class="pb20"  *ngFor="let info of infos">
+<div class="pb20"  *ngFor="let info of infos">
+<div class="row">
+  <div class="col">
     <mat-card>
           <mat-card-title>
             <p class="text">{{ info.title }}</p>
-
           </mat-card-title>
           <mat-card-content>
-            <textarea>{{ info.text }}</textarea>
+            <textarea disabled>{{ info.text }}</textarea>
           </mat-card-content>
           <mat-divider inset></mat-divider>
           <mat-card-actions>
@@ -24,3 +23,4 @@
     </div>
   </div>
 </div>
+<router-outlet></router-outlet>
